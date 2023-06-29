@@ -6,7 +6,6 @@ package twoDArray5thAssignments;
 
 
 public class Question2 {
-    class Solution {
     public int arrangeCoins(int n) {
         int rows =0;
         int i =1;
@@ -17,5 +16,4 @@ public class Question2 {
         }
         return rows;
     }
-}
 }
