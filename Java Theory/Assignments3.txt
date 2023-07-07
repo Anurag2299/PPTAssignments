@@ -1,0 +1,265 @@
+Q1) Write a simple Banking System program by using OOPs concept where you can get 
+    account Holder name balance etc?
+Ans) public class BankAccount {
+    private String accountHolder;
+    private double balance;
+    
+    public BankAccount(String accountHolder, double balance) {
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+    
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Amount " + amount + " deposited successfully.");
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+    
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Amount " + amount + " withdrawn successfully.");
+        } else {
+            System.out.println("Insufficient balance.");
+        }
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+    
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+    
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("John Doe", 1000.0);
+        System.out.println("Account Holder: " + account.getAccountHolder());
+        System.out.println("Initial Balance: " + account.getBalance());
+        
+        account.deposit(500.0);
+        System.out.println("Current Balance: " + account.getBalance());
+        
+        account.withdraw(200.0);
+        System.out.println("Current Balance: " + account.getBalance());
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+Q2)  Write a Program where you inherit method from parent class and show method Overridden Concept?
+Ans)
+    class Parent {
+    public void display() {
+        System.out.println("This is the display method of the parent class.");
+    }
+}
+
+class Child extends Parent {
+    // Method overridden from the parent class
+    @Override
+    public void display() {
+        System.out.println("This is the display method of the child class.");
+    }
+}
+
+public class MethodOverridingExample {
+    public static void main(String[] args) {
+        Parent parent = new Parent();
+        parent.display(); // Output: This is the display method of the parent class.
+        
+        Child child = new Child();
+        child.display(); // Output: This is the display method of the child class.
+        
+        // Upcasting
+        Parent upcastedChild = new Child();
+        upcastedChild.display(); // Output: This is the display method of the child class.
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------
+Q3) Write a program to show run time polymorphism in java?
+Ans)
+    class Animal {
+    public void makeSound() {
+        System.out.println("Animal is making a sound");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof");
+    }
+}
+
+public class RuntimePolymorphismExample {
+    public static void main(String[] args) {
+        Animal animal1 = new Animal();
+        animal1.makeSound(); // Output: Animal is making a sound
+        
+        Animal animal2 = new Cat();
+        animal2.makeSound(); // Output: Meow
+        
+        Animal animal3 = new Dog();
+        animal3.makeSound(); // Output: Woof
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------
+Q4.Write a program to show Compile time polymorphism in java?
+Ans) public class CompileTimePolymorphismExample {
+    public static void printMessage() {
+        System.out.println("No arguments provided.");
+    }
+    
+    public static void printMessage(String message) {
+        System.out.println("Message: " + message);
+    }
+    
+    public static void printMessage(int number) {
+        System.out.println("Number: " + number);
+    }
+    
+    public static void main(String[] args) {
+        printMessage(); // Output: No arguments provided.
+        printMessage("Hello, world!"); // Output: Message: Hello, world!
+        printMessage(10); // Output: Number: 10
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------
+Q5. Achieve loose coupling in java by using OOPs  concept?
+Ans)
+-> Encapsulation allows you to hide the internal implementation details of a class and expose 
+only necessary interfaces to the outside world.
+-> Abstraction involves creating interfaces or abstract classes that define a contract for
+ a set of related classes. By programming to interfaces or abstract classes instead of concrete 
+ implementations, you can decouple classes from each other and provide flexibility for future changes.
+ ->  Dependency Injection is a design pattern that allows objects to be created and their dependencies 
+ to be injected from external sources, rather than having objects directly create their dependencies. 
+--------------------------------------------------------------------------------------------------------------
+Q6. What is the benefit of encapsulation in java?
+Ans) The benefits of encapsulation in Java can be summarized in the following five short points:
+
+1. Data protection: Encapsulation allows you to hide the internal state of an object, 
+preventing direct access and ensuring that data integrity is maintained.
+
+2. Modularity: Encapsulation promotes modular development by breaking down complex systems 
+into smaller, manageable units, making code more organized and easier to understand.
+
+3. Code reusability: Encapsulated classes can be reused in different parts 
+of the application, reducing code duplication and improving efficiency.
+
+4. Flexibility and maintainability: Encapsulation allows you to modify the internal 
+implementation of a class without affecting other parts of the code that use the class, 
+making it easier to maintain and adapt to changes.
+
+5. Security: Encapsulation provides a level of security by restricting access to 
+sensitive data and operations, preventing unauthorized access and ensuring proper 
+validation and checks.
+--------------------------------------------------------------------------------------------------------------
+Q7.Is java a t 100% Object oriented Programming language? If no why ?
+Ans)No, Java is not considered a 100% Object-Oriented Programming (OOP) language. 
+While it follows the principles of OOP, it has certain elements that deviate from
+ strict OOP principles. For instance, Java includes primitive data types that are not objects,
+  and it allows the declaration of static methods that are not associated with instances of classes.
+
+--------------------------------------------------------------------------------------------------------------
+Q8.What are the advantages of abstraction in java?
+Ans) ->Simplifies complexity: Abstraction allows you to focus on essential concepts and hide 
+unnecessary details, simplifying the understanding and management of complex systems.
+-> Enhances code flexibility: By separating the interface from the implementation, 
+abstraction provides flexibility in modifying or extending the implementation without 
+affecting code that depends on the abstraction, promoting code modularity and adaptability.
+->Promotes code reusability: Abstraction enables the creation of interfaces and abstract 
+classes that define common behavior and contracts. This facilitates code reuse, as multiple 
+classes can implement the same abstraction, promoting modularity and reducing redundancy in code.
+--------------------------------------------------------------------------------------------------------------
+Q9.What is an abstraction explained with an Example?
+Ans) Abstraction is a fundamental concept in object-oriented programming (OOP) that involves representing
+ complex systems or ideas by focusing on the essential characteristics and hiding unnecessary details.
+  It allows you to create models or representations of real-world entities in a simplified and
+   manageable manner.
+
+   abstract class Vehicle {
+    protected String brand;
+    protected int year;
+
+    public Vehicle(String brand, int year) {
+        this.brand = brand;
+        this.year = year;
+    }
+
+    public abstract void start();
+    public abstract void stop();
+
+    public void displayInformation() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Year: " + year);
+    }
+}
+
+class Car extends Vehicle {
+    public Car(String brand, int year) {
+        super(brand, year);
+    }
+
+    @Override
+    public void start() {
+        System.out.println("Starting the car...");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Stopping the car...");
+    }
+}
+
+class Motorcycle extends Vehicle {
+    public Motorcycle(String brand, int year) {
+        super(brand, year);
+    }
+
+    @Override
+    public void start() {
+        System.out.println("Starting the motorcycle...");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Stopping the motorcycle...");
+    }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        Vehicle car = new Car("Toyota", 2020);
+        car.displayInformation();
+        car.start();
+        car.stop();
+        System.out.println();
+
+        Vehicle motorcycle = new Motorcycle("Honda", 2021);
+        motorcycle.displayInformation();
+        motorcycle.start();
+        motorcycle.stop();
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------
+
+Q10.What is the final class in Java?
+Ans) In Java, the final keyword is used to denote that a class, method, or variable is "final," 
+meaning it cannot be modified or extended.
+-> Final Class: When a class is declared as final, it means that it cannot be subclassed or extended.
+->Final variable: cannot be reinitialize.
+--------------------------------------------------------------------------------------------------------------
