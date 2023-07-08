@@ -1,0 +1,201 @@
+---------------------------------------------------------------------------------------------
+Q1.1. Write a program to show Interface Example in java?
+Ans) 
+// Defining an interface
+interface Animal {
+    void sound(); // Abstract method
+}
+
+// Implementing the interface
+class Dog implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Woof!");
+    }
+}
+
+class Cat implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Meow!");
+    }
+}
+
+public class InterfaceExample {
+    public static void main(String[] args) {
+        // Creating objects of classes implementing the Animal interface
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+
+        // Calling the sound method
+        dog.sound(); // Output: Woof!
+        cat.sound(); // Output: Meow!
+    }
+}
+
+---------------------------------------------------------------------------------------------
+Q2.Write a program a Program with 2 concrete method and 2 abstract method in java ?
+
+Ans)Sure! Here's an example program that includes two concrete methods and two abstract methods in Java:
+
+```java
+abstract class Shape {
+    // Abstract methods
+    public abstract void draw();
+    public abstract double calculateArea();
+
+    // Concrete methods
+    public void display() {
+        System.out.println("This is a shape.");
+    }
+
+    public void resize() {
+        System.out.println("Resizing the shape.");
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle.");
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+}
+
+public class ShapeExample {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5.0);
+        circle.display();
+        circle.draw();
+        double circleArea = circle.calculateArea();
+        System.out.println("Circle Area: " + circleArea);
+
+        Rectangle rectangle = new Rectangle(4.0, 6.0);
+        rectangle.display();
+        rectangle.draw();
+        double rectangleArea = rectangle.calculateArea();
+        System.out.println("Rectangle Area: " + rectangleArea);
+    }
+}
+```
+
+```
+This is a shape.
+Drawing a circle.
+Circle Area: 78.53981633974483
+This is a shape.
+Drawing a rectangle.
+Rectangle Area: 24.0
+```
+
+---------------------------------------------------------------------------------------------
+Q3.Write a program  to show the use of functional interface in java?
+Ans)// Define a functional interface with a single abstract method
+@FunctionalInterface
+interface Calculator {
+    int calculate(int a, int b);
+}
+
+public class FunctionalInterfaceExample {
+    public static void main(String[] args) {
+        // Using lambda expression to implement the functional interface
+        Calculator addition = (a, b) -> a + b;
+        int result = addition.calculate(5, 3);
+        System.out.println("Addition result: " + result);
+
+        // Using method reference to implement the functional interface
+        Calculator subtraction = FunctionalInterfaceExample::subtract;
+        result = subtraction.calculate(8, 4);
+        System.out.println("Subtraction result: " + result);
+    }
+
+    // Method to be used with method reference
+    public static int subtract(int a, int b) {
+        return a - b;
+    }
+}
+
+---------------------------------------------------------------------------------------------
+Q4.What is an interface in Java?
+Ans) In Java, an interface is a reference type that provides a way to define a contract or a set of
+ methods that a class implementing the interface must adhere to. It acts as a blueprint for
+  classes to follow, specifying the methods that must be implemented without providing the actual
+   implementation.
+---------------------------------------------------------------------------------------------
+Q5.What is the use of interface in Java?
+Ans)
+->Defining a contract for classes to follow.
+->Enabling polymorphism and multiple inheritance of type.
+->Facilitating loose coupling between classes.
+->Promoting code reusability.
+->Supporting abstraction by separating method declaration from implementation.
+---------------------------------------------------------------------------------------------
+Q6.What is the lambda expression of Java 8?
+Ans) A lambda expression is essentially an anonymous function—a block of code that can 
+be passed around and executed later.
+
+The syntax of a lambda expression consists of the following parts:
+(parameters) -> expression or statement block
+ 1)Parameters: The input parameters, if any, specified in parentheses. 
+ If there's only one parameter, the parentheses can be omitted.
+ 2)Arrow operator: The "->" operator separates the parameter list from the 
+ body of the lambda expression.
+ 3)Expression or statement block: The body of the lambda expression, 
+ which can be either a single expression or a block of statements enclosed in curly braces.
+---------------------------------------------------------------------------------------------
+Q7.Can you pass lambda expressions to a method? When?
+Ans)Yes, you can pass lambda expressions as arguments to methods in Java. This capability is particularly useful when working with functional interfaces.
+
+Functional interfaces are interfaces that have only one abstract method, also known as
+the functional method. Since lambda expressions can provide a concise way to implement
+ the functional method, they can be passed as arguments to methods that expect functional 
+ interfaces.
+---------------------------------------------------------------------------------------------
+Q8.What is the functional interface in Java 8?
+Ans) In Java, a functional interface is an interface that contains exactly one abstract method.
+ It is also known as a Single Abstract Method (SAM) interface or a functional interface because 
+ it can be used as the basis for implementing functional programming concepts in Java.
+---------------------------------------------------------------------------------------------
+Q9.What is the benefit of lambda expressions in Java 8?
+Ans) 
+-> Concise syntax
+-> Enhanced readability
+-> Functional programming support
+-> Code reusability and modularity
+
+---------------------------------------------------------------------------------------------
+Q10.Is it mandatory for a lambda expression to have parameters?
+Ans)No, it is not mandatory for a lambda expression in Java to have parameters. 
+The presence of parameters in a lambda expression depends on the specific requirements
+ of the functional interface being implemented.
+---------------------------------------------------------------------------------------------
