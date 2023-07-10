@@ -1,0 +1,127 @@
+Q1.What is Collection in Java?
+Ans) In Java, a Collection is a framework provided by the Java Collections Framework that
+ represents a group of objects, known as elements. It is designed to hold and manipulate
+  collections of objects in a structured and efficient manner.
+
+The Collection interface is at the root of the Java Collections Framework hierarchy, 
+and it provides a common set of methods for working with collections, regardless of the 
+specific implementation used. Some common implementations of the Collection interface include
+ ArrayList, LinkedList, HashSet, and TreeSet.
+--------------------------------------------------------------------------------------------------------
+Q2. Differentiate between Collection and collections in the context of Java.
+Ans)Collection: Collection is an interface defined in the Java Collections Framework. 
+It is the root interface in the collection hierarchy and represents a group of objects 
+known as elements. The Collection interface provides a common set of methods for working
+ with collections, such as adding, removing, and retrieving elements.
+  It defines behaviors that collections should implement, regardless of the specific 
+  implementation used.
+
+collections (lowercase "c"): "collections" is a term used to refer to the general concept of 
+collections in Java, including all classes and interfaces that are part of the Java Collections 
+Framework. It encompasses a range of classes and interfaces that provide implementations of various 
+collection types, such as ArrayList, LinkedList, HashSet, and TreeSet. These classes and interfaces 
+are part of the "collections" that are available in Java for managing and manipulating groups of objects.
+--------------------------------------------------------------------------------------------------------
+Q3. What are the advantages of the Collection framework?
+Ans) 
+ -> Ready-to-use Data Structures
+ -> Standardized APIs
+ -> The Collection framework provides a set of interfaces that allow you to write code that operates on 
+    collections without being tied to specific
+-> The Collection framework ensures interoperability between different collection implementations.
+--------------------------------------------------------------------------------------------------------
+Q4.Explain the various interfaces used in the Collection framework.
+Ans)
+ 1) Collection: The Collection interface is the root interface in the Collection hierarchy.
+  It defines the basic behavior of a collection, such as adding, removing, and querying elements.
+   Subinterfaces of Collection include List, Set, and Queue.
+2) List: The List interface represents an ordered collection of elements that allows 
+duplicate values. It defines operations to access elements by index, add elements
+ at specific positions, and perform various list-specific operations. Common implementations 
+ of List are ArrayList and LinkedList.
+ 3) Set: The Set interface represents a collection of unique elements with no defined order. 
+ It ensures that no duplicate elements are allowed. Set does not add any additional methods 
+ beyond those in the Collection interface. Common implementations of Set are HashSet, TreeSet, 
+ and LinkedHashSet.
+ 4)Queue: The Queue interface represents a collection designed for holding elements before processing. 
+ It follows a First-In-First-Out (FIFO) order for element retrieval. It defines methods to add, remove
+ , and access elements based on the queueing behavior. Common implementations of Queue are LinkedList
+ , PriorityQueue, and ArrayDeque.
+ 5)Map: The Map interface represents an associative data structure that stores key-value pairs. 
+ Each key in the Map is unique, and it provides methods to manipulate, retrieve, and search for values
+  based on their associated keys. Common implementations of Map are HashMap, TreeMap, and LinkedHashMap.
+--------------------------------------------------------------------------------------------------------
+Q5.Differentiate between List and Set in Java.
+Ans) 
+
+| List                                               | Set                                           |
+|-------------------------------------------------   |-----------------------------------------------|
+| Preserves the order of elements                       | Does not guarantee any specific order          |
+| Allows duplicate elements                              | Does not allow duplicate elements             |
+| Elements can be accessed by index (positional access) | No positional access to elements           |
+| Example implementations: ArrayList, LinkedList  | Example implementations: HashSet, TreeSet     |
+| Suitable for maintaining a sequence of items, implementing stacks or queues, or representing an ordered collection | Suitable for storing a unique set of elements, checking element existence, or performing set operations |
+| Provides methods like get(int index), set(int index, E element), and remove(int index) for positional access | Does not provide positional access methods     |
+
+--------------------------------------------------------------------------------------------------------
+Q6.What is the Differentiate between Iterator and ListIterator in Java.
+Ans)
+
+| Iterator                                   | ListIterator                               |
+|--------------------------------------------|--------------------------------------------|
+| Works with collections implementing the Collection interface, such as List and Set. | Works specifically with List implementations, such as ArrayList and LinkedList. |
+| Allows forward-only traversal of elements. | Allows bidirectional traversal of elements (forward and backward). |
+| Provides methods like hasNext(), next(), and remove(). | Provides additional methods like hasPrevious(), previous(), nextIndex(), previousIndex(), add(E e), set(E e), and remove(). |
+| Cannot modify the underlying collection during iteration, except for removing elements using the remove() method. | Allows modifying the underlying List during iteration. You can add elements, remove elements, or replace elements using the provided methods. |
+| Offers a simpler and more lightweight approach for basic iteration needs. | Offers more functionality and flexibility, particularly when working with Lists. |
+| Iterates over elements in a collection in the order they were inserted. | Allows iteration in both forward and backward directions, providing more control over traversal. |
+| Usage example: Iterator<String> iterator = list.iterator(); | Usage example: ListIterator<String> iterator = list.listIterator(); |
+
+--------------------------------------------------------------------------------------------------------
+Q7.What is the Differentiate between Comparable and Comparator
+Ans)
+
+| Comparable                                       | Comparator                                              |
+|--------------------------------------------------|---------------------------------------------------------|
+| Defined in the object's class                     | Implemented as a separate class or as a lambda function |
+| The object being compared must implement Comparable interface | Can be implemented by any class, including third-party classes |
+| Provides a natural ordering for the objects        | Allows for multiple custom sorting criteria              |
+| The compareTo() method is used for comparison     | The compare() method is used for comparison             |
+| Supports only one sorting sequence                 | Supports multiple sorting sequences using different comparators |
+| The sorting logic is defined within the class      | The sorting logic is defined outside the class           |
+| Requires modifying the class to implement Comparable interface | Can be used without modifying the class                |
+| Usage example: Comparable<Person>                  | Usage example: Comparator<Person>                       |
+
+--------------------------------------------------------------------------------------------------------
+Q8.What is collision in HashMap?
+Ans) In Java's HashMap, a collision occurs when two or more keys hash to the same bucket or 
+index in the underlying array used to store the key-value pairs. Hash collisions are inevitable
+ because the number of possible hash codes (output of the hashing function) is generally larger
+  than the number of available buckets in the HashMap.
+--------------------------------------------------------------------------------------------------------
+Q9.Distinguish between a hashmap and a Treemap.
+Ans) 
+Here are two key points of distinction between HashMap and TreeMap:
+
+1. Underlying Data Structure:
+   - HashMap: It uses an array of buckets along with linked lists (chaining) to store key-value pairs.
+    The array provides fast access to the buckets, and collisions are resolved by storing elements in
+     linked lists within each bucket.
+   - TreeMap: It uses a self-balancing binary search tree, specifically a Red-Black Tree, to store 
+   key-value pairs. The tree structure allows for efficient searching, insertion, and deletion
+    operations, maintaining elements in sorted order based on the keys.
+
+2. Ordering:
+   - HashMap: It does not guarantee any specific order for the key-value pairs. The elements
+    are stored based on the hash codes of the keys, and their order may vary during iterations
+     or as the HashMap resizes.
+   - TreeMap: It maintains the elements in sorted order based on the natural order of the keys 
+   or a custom Comparator provided during TreeMap creation. The keys are sorted in ascending order, 
+   allowing for efficient range-based operations.
+
+--------------------------------------------------------------------------------------------------------
+Q10.Define LinkedHashMap in Java
+Ans) In Java, LinkedHashMap is a class that extends the HashMap class and provides a predictable
+ iteration order for its elements. It combines the functionality of a HashMap with a doubly-linked
+  list to maintain the insertion order of elements.
+--------------------------------------------------------------------------------------------------------
