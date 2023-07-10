@@ -1,0 +1,86 @@
+Q1.What is ORM in Hibernate?
+Ans) ORM stands for Object-Relational Mapping. In the context of Hibernate, ORM refers to
+ the technique of mapping object-oriented domain models to a relational database. It allows
+  developers to interact with a relational database using object-oriented programming concepts.
+
+Hibernate is an open-source Java framework that provides an ORM implementation. 
+It simplifies the process of storing, retrieving, and managing data in a database 
+by providing a layer of abstraction between the application code and the database.
+----------------------------------------------------------------------------------------------------
+Q2.What are the advantages of Hibernate over JDBC?
+Ans) 
+-> Query flexibility: Hibernate offers a powerful query language called Hibernate Query Language (HQL),
+ which is similar to SQL but operates on objects rather than tables.
+-> Hibernate includes caching mechanisms that can improve application performance.
+ It provides various levels of caching, such as first-level cache (session cache) and 
+ second-level cache (shared cache), which reduce the number of database round-trips and 
+ optimize data retrieval.
+->  Hibernate manages database transactions automatically, ensuring data consistency and 
+integrity. It simplifies the process of handling transactions and reduces the chances of 
+errors related to transaction management.
+->  Hibernate abstracts the underlying database, allowing developers to write database-agnostic code.
+ The same Hibernate code can work with different database systems, as long as the appropriate dialect
+  and configuration are provided
+----------------------------------------------------------------------------------------------------
+Q3.What are some of the important interfaces of Hibernate framework?
+Ans) 
+-> SessionFactory: The SessionFactory interface is responsible for creating and managing sessions in Hibernate. 
+-> Session: The Session interface represents a single-threaded unit of work with the database. 
+It provides methods for CRUD operations 
+->Transaction: The Transaction interface represents a unit of work performed within a session.
+-> Query: The Query interface allows developers to create and execute queries against the database.
+-> Transactional: The Transactional interface is not specific to Hibernate but is commonly used in Hibernate applications.
+----------------------------------------------------------------------------------------------------
+Q4.What is a Session in Hibernate?
+Ans)The Session interface represents a single-threaded unit of work with the database. 
+It provides methods for CRUD operations (save, update, delete), querying the database, and 
+managing transactions. The Session acts as a gateway to the underlying persistence context 
+and serves as the primary interface for interacting with the database in Hibernate.
+----------------------------------------------------------------------------------------------------
+Q5.What is a SessionFactory?
+Ans) The SessionFactory interface is responsible for creating and managing sessions in Hibernate. 
+It is typically built during application startup and represents a thread-safe, immutable cache of
+ compiled mappings for a specific database. The SessionFactory is used to obtain Session instances,
+  which are used for database operations.
+----------------------------------------------------------------------------------------------------
+Q6.What is HQL?
+Ans)HQL stands for Hibernate Query Language. It is a powerful, object-oriented query language 
+provided by Hibernate for querying and manipulating data in a database. HQL is similar to SQL 
+(Structured Query Language), but it operates on objects and their properties rather than database
+ tables and columns.
+----------------------------------------------------------------------------------------------------
+Q7.What are Many to Many associations?
+Ans)Many-to-many associations are a type of relationship between entities in a database where 
+multiple instances of one entity can be associated with multiple instances of another entity, 
+and vice versa. In the context of Hibernate and database modeling, many-to-many associations
+ represent a relationship that is defined by joining tables and typically involves intermediate 
+ tables.
+----------------------------------------------------------------------------------------------------
+Q8.What is hibernate caching?
+Ans)Hibernate caching refers to the mechanism provided by Hibernate to improve the performance of 
+database operations by reducing the number of trips made to the database. It involves storing
+ frequently accessed data in memory so that subsequent requests can be served faster.
+ Hibernate offers different levels of caching
+ ->First-level cache
+ ->Second-level cache
+ ->Query cache
+----------------------------------------------------------------------------------------------------
+Q9.What is the difference between first level cache and second level cache?
+ANs) 
+First level
+-> first-level cache is specific to an individual Hibernate Session and operates at the object level.
+-> It is enabled by default and provides fine-grained caching within a session. 
+
+Second level
+->second-level cache is shared among multiple sessions and operates at the entity or collection level.
+-> It requires explicit configuration and offers broader caching capabilities, persisting beyond the lifespan of individual sessions.
+----------------------------------------------------------------------------------------------------
+Q10.What can you tell about Hibernate Configuration File?
+Ans) 
+-> Database connection details
+-> Hibernate dialect
+-> Mapping configuration
+-> Caching settings
+-> Transaction management
+-> Logging configuration
+
