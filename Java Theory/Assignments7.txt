@@ -1,0 +1,116 @@
+Q1.What is the use of JDBC in java?
+Ans) The JDBC (Java Database Connectivity) API is a Java API that allows Java programs
+ to interact with relational databases. It provides a standard set of classes and interfaces
+  for connecting to a database, executing SQL statements, and retrieving and manipulating data.
+---------------------------------------------------------------------------------------------------
+Q2.What are the steps involved in JDBC?
+Ans) The steps involved in using JDBC in Java are as follows:
+ -> Load the JDBC Driver
+ -> Establish a Connection
+ -> Create a Statement
+ ->Execute SQL Statements
+ ->Process the Result
+ ->Handle Exceptions
+ ->Close the Connection
+---------------------------------------------------------------------------------------------------
+Q3.What are the types of statement in JDBC in java?
+Ans) here are three types of statements that can be used to execute SQL queries and updates:
+1) Statement
+    Statement statement = connection.createStatement();
+    ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
+2) PreparedStatement
+    PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE age > ?");
+    preparedStatement.setInt(1, 18); // Set the parameter value
+    ResultSet resultSet = preparedStatement.executeQuery();
+3) CallableStatement
+    CallableStatement callableStatement = connection.prepareCall("{call insert_user(?, ?)}");
+    callableStatement.setString(1, "John Doe"); // Set the input parameter
+    callableStatement.registerOutParameter(2, Types.INTEGER); // Register the output parameter
+    callableStatement.execute();
+    int generatedId = callableStatement.getInt(2); // Retrieve the output parameter value
+
+---------------------------------------------------------------------------------------------------
+Q4.What is Servlet in Java?
+Ans) A Servlet in Java is a server-side component that extends the functionality of a web 
+server and allows the handling of dynamic content generation and processing of client requests.
+ It is a key component of Java Enterprise Edition (Java EE) and plays a crucial role in building
+  web applications.
+---------------------------------------------------------------------------------------------------
+Q5.Explain the life Cycle of servlet?
+Ans) The servlet life cycle consists of the following stages:
+
+-> Loading
+-> Instantiation
+-> Initialization
+-> Handling Requests
+-> Request Processing
+-> Destroying
+---------------------------------------------------------------------------------------------------
+Q6.Explain the difference between the RequestDispatcher.forward() and
+ HttpServletResponse.sendRedirect() methods?
+Ans) The RequestDispatcher.forward() and HttpServletResponse.sendRedirect() methods are used in
+ Java servlets to control the flow of requests and responses. 
+ 
+ RequestDispatcher.forward():
+
+The RequestDispatcher.forward() method is used to forward the current request from one servlet or JSP to another servlet, JSP, or HTML file in the same application.
+The forwarding happens internally on the server-side, and the client is unaware of the change. The browser's URL remains the same.
+The forward is performed within a single server request/response cycle. The control is transferred to the new resource, and it continues processing the request.
+The forward allows sharing of request attributes, parameters, and session data between the original servlet and the target resource.
+
+HttpServletResponse.sendRedirect():
+
+The HttpServletResponse.sendRedirect() method is used to redirect the client to a different URL, which may be within the same application or on a different domain.
+The redirect is performed by sending a response with an HTTP status code 302 (Found) or 303 (See Other) along with the new URL in the response headers.
+The client browser receives the redirect response and issues a new GET request to the specified URL. The browser's URL changes to the new URL.
+The redirect happens in a separate request/response cycle. The original request ends, and a new request is initiated by the client to the redirected URL.
+---------------------------------------------------------------------------------------------------
+Q7.What is the purpose of the doGet() and doPost() methods in a servlet?
+Ans) doGet(HttpServletRequest request, HttpServletResponse response): This method is called by 
+the servlet container to handle HTTP GET requests. It is responsible for processing GET requests
+ sent by clients, retrieving data from the server, and generating a response.
+
+ doPost(HttpServletRequest request, HttpServletResponse response): This method is called by the 
+ servlet container to handle HTTP POST requests. It is responsible for processing POST requests 
+ sent by clients, accepting data from the client, and performing server-side operations.
+---------------------------------------------------------------------------------------------------
+
+Q8.Explain the JSP Model-View-Controller (MVC) architecture.
+Ans)The JSP Model-View-Controller (MVC) architecture is a design pattern commonly used in
+ web application development to separate concerns and promote modular, maintainable, and 
+ scalable code. It divides the application into three interconnected components: the Model, 
+ View, and Controller.
+
+Model:
+
+The Model represents the application's data and business logic. It encapsulates the data and provides methods to access, manipulate, and perform operations on the data.
+In the context of JSP, the Model often consists of JavaBeans, POJOs (Plain Old Java Objects), or data access objects (DAOs). These components interact with the database, perform calculations, and provide data to the View.
+
+View:
+
+The View represents the presentation layer of the application, responsible for rendering the user interface and displaying the data to the user. It focuses on the visual aspects and user interactions.
+In the context of JSP, the View is typically represented by JSP pages or templates. They contain HTML, CSS, and JSP tags to dynamically display the data from the Model. The View is responsible for presenting the data and capturing user input.
+
+Controller:
+
+The Controller acts as an intermediary between the Model and the View. It receives user input from the View, processes it, interacts with the Model to fetch or update data, and determines the appropriate View to display the results.
+In the context of JSP, the Controller can be implemented using servlets or other components that handle the request and response cycle. It captures user input, invokes business logic, performs data validation, and decides which View to forward or redirect to based on the outcome.
+---------------------------------------------------------------------------------------------------
+Q9.What are some of the advantages of Servlets?
+Ans) 
+-> Platform Independence
+-> Server-side Processing
+-> Extensive API and Framework Support
+-> Scalability and Load Balancing
+-> Session Management
+---------------------------------------------------------------------------------------------------
+Q10.What are the limitations of JSP?
+Ans) 
+-> Mixing Presentation and Logic
+-> Limited Reusability
+-> Limited Control Over HTML Generation
+-> Performance Overhead
+---------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
