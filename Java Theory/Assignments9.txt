@@ -1,0 +1,83 @@
+_________________________________________________________________________________________________________
+
+Q1.What is Spring Framework?
+Ans) Spring Framework is a powerful and widely used Java-based open-source framework that provides
+ comprehensive infrastructure support for developing Java applications. It aims to simplify Java 
+ development by providing a modular and flexible approach to building enterprise-level applications.
+
+_________________________________________________________________________________________________________
+Q2.What are the features of Spring Framework?
+Ans) Key features of the Spring Framework include:
+  ->Data Access Abstraction
+ ->Transaction Management
+ ->Aspect-Oriented Programming (AOP)
+ ->Inversion of Control (IoC)
+ -> Caching
+ -> Internationalization
+ ->Integration with Other Frameworks
+_________________________________________________________________________________________________________
+
+Q3.What is a Spring configuration file?
+Ans) It contains the necessary information to configure and bootstrap a Spring application context.
+ It defines the beans (objects) and their dependencies that make up the application's configuration.
+ There are typically two types of Spring configuration files:
+ 1) XML based
+ 2) Java based
+_________________________________________________________________________________________________________
+
+Q4.What do you mean by IoC Container?
+Ans)The IoC container creates, configures, and manages instances of beans based on the configuration 
+provided. It handles the creation of objects, resolves their dependencies, and injects those
+ dependencies into the respective beans.
+_________________________________________________________________________________________________________
+Q5.What do you understand by Dependency Injection?
+Ans)
+Dependency Injection (DI) is a software design pattern and a key concept in the Spring Framework.
+ It is a form of Inversion of Control (IoC) where the control of object creation and management
+  of dependencies is shifted from the application code to an external entity, often referred to 
+  as an IoC container or DI container.
+
+In DI, objects (beans) define their dependencies through interfaces, abstract classes, or constructors,
+ rather than directly creating or looking up the dependent objects. The dependencies are then injected
+  into the objects by an external entity (DI container) at runtime.
+
+_________________________________________________________________________________________________________
+Q6.Explain the difference between constructor and setter injection?
+Ans)
+ Constructor Injection:
+
+Definition: In Constructor Injection, dependencies are injected through the constructor of a class.
+Usage: Dependencies are declared as constructor parameters, and the DI container provides the required
+ dependencies when creating the object.
+
+Setter Injection:
+
+Definition: In Setter Injection, dependencies are injected through setter methods (or mutator methods) of a class.
+Usage: Dependencies are declared as setter methods, and the DI container calls these methods to set 
+the dependencies after creating the object.
+
+_________________________________________________________________________________________________________
+
+Q7.What are Spring Beans?
+Ans) It is an instance of a class that is created, configured, and managed by the Spring Framework.
+ Beans are the fundamental building blocks of a Spring application, and they represent the various
+  components and services within the application.
+_________________________________________________________________________________________________________
+
+Q8.What are the bean scopes available in Spring?
+Ans) 
+->Singleton
+->Application
+->Global Session
+-> Session
+-> Request
+->Prototype
+_________________________________________________________________________________________________________
+
+Q9.What is Autowiring and name the different modes of it?
+Ans) Autowiring is a feature provided by the Spring Framework that allows automatic injection 
+of dependencies into Spring-managed beans. Instead of explicitly specifying the dependencies 
+and their wiring, autowiring automatically identifies the dependencies and resolves them based
+ on certain rules.
+_________________________________________________________________________________________________________
+
